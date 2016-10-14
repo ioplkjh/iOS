@@ -401,7 +401,7 @@
     }
     else
     {
-        cell.modelLabel.text = @"Марка Модель";
+        cell.modelLabel.text = @"Выберите авто";
     }
 }
 
