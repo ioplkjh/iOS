@@ -9,7 +9,8 @@ import UIKit
 
 enum LeftMenu: Int {
     case Main = 0
-    case Search
+// koms
+//    case Search
     case Order
     case Settings
     case ShepardsMode
@@ -31,12 +32,16 @@ class LeftViewController : UIViewController, LeftMenuProtocol,UITableViewDelegat
     @IBOutlet weak var tableView: UITableView!
     let picker = UIImagePickerController()
     
-    var menus = ["КАРТА", "ПОИСК", "МОИ ЗАКАЗЫ", "НАСТРОЙКИ"]
-    var images = ["icon_map", "icon_search", "icon_zakazy", "icon_nastroyki"]
+    // koms
+    //var menus = ["КАРТА", "ПОИСК", "МОИ ЗАКАЗЫ", "НАСТРОЙКИ"]
+    //var images = ["icon_map", "icon_search", "icon_zakazy", "icon_nastroyki"]
 
+    var menus = ["КАРТА", "МОИ ЗАКАЗЫ", "НАСТРОЙКИ"]
+    var images = ["icon_map", "icon_zakazy", "icon_nastroyki"]
     
     var mainViewController:             UIViewController!
-    var searchNavigationViewController: UIViewController!
+    // koms
+    //var searchNavigationViewController: UIViewController!
     var settingsNavigationControler:    UIViewController!
     var ordersNavigationControler:    UIViewController!
 
@@ -102,11 +107,12 @@ class LeftViewController : UIViewController, LeftMenuProtocol,UITableViewDelegat
         self.tableView.backgroundColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1.0)
         self.tableView.separatorColor = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1.0)
         
-        var storyboard = UIStoryboard(name: "Search", bundle: nil)
-        self.searchNavigationViewController = storyboard.instantiateViewControllerWithIdentifier("SearchNavigationController") as! UINavigationController
+        // koms
+        // var storyboard = UIStoryboard(name: "Search", bundle: nil)
+        //self.searchNavigationViewController = storyboard.instantiateViewControllerWithIdentifier("SearchNavigationController") as! UINavigationController
         
         
-        storyboard = UIStoryboard(name: "Settings", bundle: nil)
+        var storyboard = UIStoryboard(name: "Settings", bundle: nil)
         self.settingsNavigationControler = storyboard.instantiateViewControllerWithIdentifier("SettingsNavigationController") as! UINavigationController
 
         storyboard = UIStoryboard(name: "OrderBoard", bundle: nil)
@@ -164,7 +170,7 @@ class LeftViewController : UIViewController, LeftMenuProtocol,UITableViewDelegat
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -201,9 +207,10 @@ class LeftViewController : UIViewController, LeftMenuProtocol,UITableViewDelegat
         case .Main:
             self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
             break
-        case .Search:
-            self.slideMenuController()?.changeMainViewController(self.searchNavigationViewController, close: true)
-            break
+            // koms
+            //case .Search:
+            //self.slideMenuController()?.changeMainViewController(self.searchNavigationViewController, close: true)
+            //break
         case .Order:
             self.slideMenuController()?.changeMainViewController(self.ordersNavigationControler, close: true)
             break

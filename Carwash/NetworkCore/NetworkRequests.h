@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 //#define kBaseUrl(func) [NSURL URLWithString:[NSString stringWithFormat:@"http://test.itnavigator.org:88/car-wash/backend/%@", func]];
-#define kBaseUrl(func) [NSURL URLWithString:[NSString stringWithFormat:@"http://allmoyki.ru/backend/%@", func]];
+#define kBaseUrl(func) [NSURL URLWithString:[NSString stringWithFormat:@"https://zapis24.ru/backend/%@", func]];
 
 
 #define kGetAllRegion              @"Region/GetAll"
